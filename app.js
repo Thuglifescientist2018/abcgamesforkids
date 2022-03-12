@@ -5,6 +5,7 @@ let searchBox = document.querySelector("#content input");
 function changeImage() {
     
     // changes image according to the search
-    image.setAttribute("src", "./atoz/" + searchBox.value + ".gif");
+    image.setAttribute("src", "./AtoZ/" + searchBox.value + ".gif");
+
     
 }
