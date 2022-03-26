@@ -11,78 +11,91 @@
     <title>Alphabets Game!</title>
     <link rel="stylesheet" href="./style.css">
   </head>
+  
   <body>
-   <section id="content" class="container">
-    <audio controls>
-      <source src="intro.ogg" type="audio/ogg">
-  
-      Your browser does not support the audio element.
-    </audio>
-    <input type="text" onkeyup="changeImage()"/>
-    <div class="page-body">
-      <article class="article article-project">
-  
-  
-    <div class="article-container">
-  
-      <div class="article-style">
-        
-  
-  <h2 id="demo">Write here</h2>
-  <div>
-    <span style="display : inline-block">
-      PenSize <span id="lineWidth">3</span><input type="range" id="penSize" min="1" max="30" value="3">
-      <br>
-      <canvas id="canvas" width="346" height="346" style="border: 2px solid; cursor: crosshair;"></canvas>
-      <br>
-      <form>
-        Language:
-        <select id="language">
-            <option value="en" selected="selected">English</option>
-          <option value="zh_TW">Chinese</option>
-          <option value="ja">Japanese</option>
-        </select>
-      </form>
-      <br>
-      <button class="btn btn-success" onclick="canvas.erase();">Erase</button>
-      <button  class="btn btn-success" onclick="
-        var e = document.getElementById('language');
-        canvas.setOptions({language: e.options[e.selectedIndex].value});
-        canvas.recognize();
-      ">Send</button>
-      <button class="btn btn-success" onclick="canvas.undo()">Undo</button>
-      <button class="btn btn-success" onclick="canvas.redo()">Redo</button>
-      <br>
-      result: <span id="result">Chow,chow,Chou,Show,Chaw,how,chou,Chon,chaw,Chowe</span>
-    </span>
-    <script type="text/javascript" src="./handwriting.js/handwriting.canvas.js"></script>
-    <script type="text/javascript" defer="">
-      var canvas = new handwriting.Canvas(document.getElementById('canvas'), 3);
-      var width = document.getElementById("demo").clientWidth
-      canvas.cxt.canvas.width  = width < 400 ? width : 400;
-      canvas.cxt.canvas.height = width < 400 ? width : 400;
-      canvas.setCallBack(function(data, err) {
-        if (err) throw err;
-        else document.getElementById("result").innerHTML = data;
-      });
-      canvas.set_Undo_Redo(true, true);
-      var penSize = document.getElementById("penSize");
-      penSize.addEventListener("mousemove", function() {
-        document.getElementById("lineWidth").innerHTML = penSize.value;
-      });
-      penSize.addEventListener("change", function(){
-        canvas.setLineWidth(penSize.value);
-      });
-    </script>
-  </div>
+    <div class="section1">
+    <!-- the header section -->
+  <header> 
+  <h1>ALPHABET LEARNING FOR KIDS</h1></header>
+
+
+  <!-- the body contanier -->
       
+    <div id="content" class="body-contanier">
+
+      <!--removed the audio controls
+      <audio controls>
+      <source src="intro.ogg" type="audio/ogg">Your browser does not support the audio element.</audio> -->
+        <input type="text" class="input_style"  onkeyup="changeImage()">
+        <h2 id="demo" class="text_board">Write Here</h2>
+    <!-- canva part -->
+    <div>
+      <span style="display : inline-block">
+        PenSize <span id="lineWidth">3</span><input type="range" id="penSize" min="1" max="30" value="3">
+<br>
+        <canvas id="canvas" style="width: 446; height: 346"  ></canvas>
+        <br>
+        <form>
+          Language:
+          <select id="language">
+              <option value="en" selected="selected">English</option>
+            <option value="zh_TW">Chinese</option>
+            <option value="ja">Japanese</option>
+          </select>
+        </form>
+        <br>
+        <button class="btn" onclick="canvas.erase();">Erase</button>
+        <button  class="btn" onclick="
+          var e = document.getElementById('language');
+          canvas.setOptions({language: e.options[e.selectedIndex].value});
+          canvas.recognize();
+        ">Send</button>
+        <button class="btn" onclick="canvas.undo()">Undo</button>
+        <button class="btn" onclick="canvas.redo()">Redo</button>
+        <br>
+        result: <span id="result">Chow,chow,Chou,Show,Chaw,how,chou,Chon</span>
+      </span>
+
     </div>
-  </article>
-    </div>
-    <figure id="search_result">
-           <img  src="./AtoZ/apple.gif" alt="search image result">
+  </div>
+    
+
+
+      <script type="text/javascript" src="./handwriting.js/handwriting.canvas.js"></script>
+      <script type="text/javascript" defer="">
+        var canvas = new handwriting.Canvas(document.getElementById('canvas'), 3);
+        var width = document.getElementById("demo").clientWidth
+        canvas.cxt.canvas.width  = width < 400 ? width : 400;
+        canvas.cxt.canvas.height = width < 400 ? width : 400;
+        canvas.setCallBack(function(data, err) {
+          if (err) throw err;
+          else document.getElementById("result").innerHTML = data;
+        });
+        canvas.set_Undo_Redo(true, true);
+        var penSize = document.getElementById("penSize");
+        penSize.addEventListener("mousemove", function() {
+          document.getElementById("lineWidth").innerHTML = penSize.value;
+        });
+        penSize.addEventListener("change", function(){
+          canvas.setLineWidth(penSize.value);
+        });
+      </script>
+
+      <!-- the display result part,here there will be alphabet display -->
+<div class="displayResultImage">
+      <figure id="search_result">
+           <!-- <img  src="./AtoZ/apple.gif" alt="search image result">
+             changed the default image to letter A image -->
+           <img  src="/alphabet images/a.png" alt="search image result" style="height: 80px;
+           width: 80px;padding-top: 30px;">
         </figure>
-   </section>
+<!-- end of contanier -->
+      </div>
+</div>
+
+
+
+
 
     <!-- Optional JavaScript; choose one of the two! -->
 
@@ -138,5 +151,42 @@
   
   </script>
     <script src="./app.js"></script>
-  </body>
+  <!-- Code injected by live-server -->
+<script type="text/javascript">
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script></body>
 </html>

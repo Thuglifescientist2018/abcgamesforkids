@@ -10,6 +10,7 @@ function changeImage(name) {
     }
     else {
     // changes image according to the search
+    
     image.setAttribute("src", "./AtoZ/" + searchBox.value.toLowerCase() + ".gif");
     }
     
