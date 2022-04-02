@@ -18,7 +18,7 @@
   
       Your browser does not support the audio element.
     </audio>
-    <input type="text" onkeyup="changeImage()"/>
+    <input type="text" placeholder="search for image"  onkeyup="changeImage()"/>
     <div class="page-body">
       <article class="article article-project">
   
@@ -28,12 +28,12 @@
       <div class="article-style">
         
   
-  <h2 id="demo">Write here</h2>
-  <div>
+  <h2 id="demo" style="letter-spacing: 8px; font-family: cursive; color: #f2698e;">Write here</h2>
+  <br>
     <span style="display : inline-block">
       PenSize <span id="lineWidth">3</span><input type="range" id="penSize" min="1" max="30" value="3">
       <br>
-      <canvas id="canvas" width="346" height="346" style="border: 2px solid; cursor: crosshair;"></canvas>
+      <canvas id="canvas" class="canvas"></canvas>
       <br>
       <form>
         Language:
@@ -44,16 +44,16 @@
         </select>
       </form>
       <br>
-      <button class="btn btn-success" onclick="canvas.erase();">Erase</button>
-      <button  class="btn btn-success" onclick="
+      <button class="btn " onclick="canvas.erase();">Erase</button>
+      <button  class="btn " onclick="
         var e = document.getElementById('language');
         canvas.setOptions({language: e.options[e.selectedIndex].value});
         canvas.recognize();
       ">Send</button>
-      <button class="btn btn-success" onclick="canvas.undo()">Undo</button>
-      <button class="btn btn-success" onclick="canvas.redo()">Redo</button>
+      <button class="btn " onclick="canvas.undo()">Undo</button>
+      <button class="btn " onclick="canvas.redo()">Redo</button>
       <br>
-      result: <span id="result">Chow,chow,Chou,Show,Chaw,how,chou,Chon,chaw,Chowe</span>
+      result: <span id="result">Chow,chow,Chou,Show,Chaw,how,</br>chou,Chon,chaw,Chowe</span>
     </span>
     <script type="text/javascript" src="./handwriting.js/handwriting.canvas.js"></script>
     <script type="text/javascript" defer="">
@@ -79,7 +79,7 @@
     </div>
   </article>
     </div>
-    <figure id="search_result">
+    <figure id="search_result" class="search_result">
            <img  src="./AtoZ/apple.gif" alt="search image result">
         </figure>
    </section>
