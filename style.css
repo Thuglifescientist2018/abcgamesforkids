@@ -33,11 +33,11 @@ body {
   border-radius: 20px;
   border: 1px solid #f2698e;
   text-align: center;
-  color: white;
+  color: black;
 }
 #content input::placeholder {
   padding: 20px;
-  /* color: white; */
+  color: black;
 }
 #content img {
   width: 100%;
