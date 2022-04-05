@@ -2,7 +2,10 @@
 let image = document.querySelectorAll("#search_result img")[1]
 let searchBox = document.querySelector("#content input");
 let spinner = document.querySelector("#spinner");
-
+function init() {
+  image.style.display = "none";
+}
+init();
 function changeImage(name) {
     image.style.display = "none";
     spinner.style.display = "block";
