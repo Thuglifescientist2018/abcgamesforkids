@@ -1,5 +1,5 @@
 // reusable variables
-let image = document.querySelector("#search_result img:last-child")
+let image = document.querySelectorAll("#search_result img")[1]
 let searchBox = document.querySelector("#content input");
 let spinner = document.querySelector("#spinner");
 
