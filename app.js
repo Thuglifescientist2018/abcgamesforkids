@@ -1,11 +1,12 @@
 // reusable variables
-let image = document.querySelector("#search_result img")
+let image = document.querySelector("#search_result img:last-child")
 let searchBox = document.querySelector("#content input");
+let spinner = document.querySelector("#spinner");
 
 function changeImage(name) {
-    
+    spinner.style.display = "block";
     if(name) { 
-        console.log(name.toLowerCase())
+        
         image.setAttribute("src", "./AtoZ/" + name.toLowerCase() + ".gif");
     }
     else {
@@ -15,8 +16,19 @@ function changeImage(name) {
     
 }
 
-function getResult(result) {
+
+function getResult(result) { // used in handwriting.js
  
   let data = result.split(',')[0];
+ 
   changeImage(data)
 }
+
+image.addEventListener("load", function() {
+  if(!this.complete) {
+    console.log("not yet");
+  }
+  else {
+    spinner.style.display = "none";
+  }
+})
