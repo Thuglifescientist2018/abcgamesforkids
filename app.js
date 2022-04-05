@@ -4,6 +4,7 @@ let searchBox = document.querySelector("#content input");
 let spinner = document.querySelector("#spinner");
 
 function changeImage(name) {
+    image.style.display = "none";
     spinner.style.display = "block";
     if(name) { 
         
@@ -25,10 +26,9 @@ function getResult(result) { // used in handwriting.js
 }
 
 image.addEventListener("load", function() {
-  if(!this.complete) {
-    console.log("not yet");
-  }
-  else {
+  if(this.complete) {
     spinner.style.display = "none";
+    image.style.display = "block";
   }
+  
 })
