@@ -30,6 +30,7 @@
   
   <h2 id="demo" style="letter-spacing: 8px; font-family: cursive; color: #f2698e;">Write here</h2>
   <br>
+  <div id="drawing_and_result">
     <span style="display : inline-block">
       PenSize <span id="lineWidth">3</span><input type="range" id="penSize" min="1" max="30" value="3">
       <br>
@@ -55,6 +56,13 @@
       <br>
       result: <span id="result">Chow,chow,Chou,Show,Chaw,how,</br>chou,Chon,chaw,Chowe</span>
     </span>
+    <figure id="search_result" class="search_result">
+      <img id="spinner" src="./spinner.jpg" alt="">
+     <img  src="./AtoZ/apple.gif" alt="search image result">
+  </figure>
+  </div>
+  
+</section>
     <script type="text/javascript" src="./handwriting.js/handwriting.canvas.js"></script>
     <script type="text/javascript" defer="">
       var canvas = new handwriting.Canvas(document.getElementById('canvas'), 3);
@@ -79,11 +87,7 @@
     </div>
   </article>
     </div>
-    <figure id="search_result" class="search_result">
-            <img id="spinner" src="./spinner.jpg" alt="">
-           <img  src="./AtoZ/apple.gif" alt="search image result">
-        </figure>
-   </section>
+   
 
     <!-- Optional JavaScript; choose one of the two! -->
 
