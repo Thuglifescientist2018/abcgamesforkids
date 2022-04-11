@@ -1,0 +1,6 @@
+@media (max-width: 600px) {
+    #drawing_and_result {
+        display: flex;
+        flex-direction: column;
+    }
+}

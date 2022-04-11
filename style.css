@@ -60,29 +60,13 @@ body {
 .canvas {
   background: white;
 }
-@media (max-width: 600px) {
-  .container {
-    max-width: 100%;
-    margin: 0;
-  }
-  
-}
+
 .canvas{
   width:390px; 
   height:390px;
   border: 2px solid; 
   cursor: crosshair;
   border: 2px solid black;
-}
-@media screen and (max-width: 600px){
-  .canvas{
-    width:320px; 
-    height:320px;
-}
-.search_result>img{
-  width:320px; 
-
-}
 }
 
 .search_result>img{
@@ -100,3 +84,4 @@ body {
   margin: 8px;
   outline: none;
 }
+

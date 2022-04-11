@@ -3,8 +3,9 @@ let image = document.querySelectorAll("#search_result img")[1]
 let searchBox = document.querySelector("#content input");
 let spinner = document.querySelector("#spinner");
 let searchResult = document.querySelector("#search_result");
-function init() {
-  image.style.display = "none";
+let drawingboard = document.querySelector("#canvas");
+function init() { 
+  image.style.display = "none"; 
   spinner.style.display = "none";
 }
 init();
@@ -21,7 +22,7 @@ function changeImage(name) {
     }
     
 }
-
+//getResult receives the data from handwriting js and we send the first word from the array to changeImage function
 
 function getResult(result) { // used in handwriting.js
  
@@ -29,10 +30,8 @@ function getResult(result) { // used in handwriting.js
  
   changeImage(data)
 }
-function imageNotFound() {
-  
- 
 
+function imageNotFound() {
   const errorText = "Image Not Found";
   const error = document.createElement("h3");
   error.setAttribute("id", "imagenotfound");
@@ -43,9 +42,9 @@ function imageNotFound() {
   setTimeout(() => {
     error.remove();
   }, 3000);
-
   
 }
+
 image.addEventListener("load", function() {
   if(this.complete) {
     spinner.style.display = "none";
@@ -53,4 +52,31 @@ image.addEventListener("load", function() {
   }
   
 })
-image.addEventListener("error", imageNotFound)
+image.addEventListener("error", imageNotFound);
+
+
+document.addEventListener("keydown", function(e) {
+
+  switch(e.keyCode) {
+    case 101:
+      canvas.erase();
+      break;
+    case 117:
+      canvas.undo();
+      break;
+    case 114:
+      canvas.redo();
+      break;
+    case 115:
+      canvas.recognize();
+      break;
+    default:
+      console.log(e.key)
+  }
+ 
+  if(e.ctrlKey && e.keyCode === 90) { // ctrl + z
+    canvas.undo();
+      
+  }
+
+})
