@@ -4,3 +4,35 @@
         flex-direction: column;
     }
 }
+@media(max-width: 360px) {
+    #content input {
+        width: 100%;
+    }
+    .page-body {
+        overflow: hidden !important;
+    }
+    .page-body #demo {
+        font-size: small;
+        width: 100%;
+    }
+    #penSize {
+        width: 140px !important; 
+        display: block;
+        margin-left: 32%;
+    }
+    #drawing_and_result span {
+        display: flex;
+        flex-direction: column;
+    }
+    #drawing_and_result .btn  {
+        display: block;
+        margin-left: 40%;
+        line-height: 1rem;
+        
+    }
+    #search_result img {
+        width: 150px !important;
+    }
+    
+
+}
